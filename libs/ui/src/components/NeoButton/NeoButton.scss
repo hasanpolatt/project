@@ -1,0 +1,108 @@
+@import '@oruga-ui/oruga/src/scss/oruga-full.scss';
+@import '../../scss/variable.scss';
+@import '../../scss/theme.scss';
+
+.is-neo {
+  border-radius: 0;
+  font-family: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  @include ktheme() {
+    box-shadow: theme('primary-shadow');
+    border: 1px solid theme('border-color');
+    color: theme('text-color');
+    background: theme('background-color');
+  }
+
+  &:hover {
+    @include ktheme() {
+      background: theme('k-accentHover');
+      color: theme('black');
+    }
+  }
+
+  &.active {
+    @include ktheme() {
+      background-color: theme('background-color-inverse');
+      color: theme('text-color-inverse');
+    }
+  }
+}
+
+.o-btn {
+  &--k-accent {
+    @include ktheme() {
+      background-color: theme('k-primary');
+      color: theme('black');
+      &:hover {
+        background: theme('background-color');
+        color: theme('text-color');
+      }
+    }
+
+    &.o-btn--disabled {
+      opacity: unset;
+      @include ktheme() {
+        background-color: theme('k-shade');
+        color: theme('k-grey');
+        border-color: theme('k-grey');
+      }
+    }
+  }
+
+  &--k-blue {
+    @include ktheme() {
+      background-color: theme('k-blue');
+      color: theme('black');
+      &:hover {
+        background: theme('background-color');
+        color: theme('text-color');
+      }
+    }
+    &.o-btn--disabled {
+      opacity: unset;
+
+      @include ktheme() {
+        background-color: theme('k-shade');
+        color: theme('k-grey');
+        border-color: theme('k-grey');
+      }
+    }
+  }
+
+  &--connect-dropdown {
+    width: 120px;
+    height: 40px;
+
+    @include ktheme() {
+      background: theme('background-color');
+      &:hover {
+        background-color: theme('k-accentHover');
+        color: theme('black');
+        border: 1px solid theme('border-color');
+      }
+    }
+  }
+
+  &.is-text {
+    border: none !important;
+    width: min-content;
+    @include ktheme() {
+      color: theme('k-grey');
+      text-underline-offset: 0.25rem;
+      &:hover {
+        color: theme('text-color');
+        background: none;
+      }
+    }
+  }
+
+  &.no-shadow {
+    box-shadow: none;
+  }
+}
+
+.is-fixed-width {
+  width: 10rem;
+}

@@ -1,0 +1,45 @@
+<template>
+  <div>
+    <section class="py-8 instance section-search">
+      <LazySearchLanding />
+    </section>
+
+    <!-- discover -->
+    <section v-if="showCarousel" class="py-8 instance">
+      <div class="container is-fluid">
+        <LazyCarouselTypeSpotlight />
+      </div>
+    </section>
+
+    <!-- top collections -->
+    <section v-if="showCarousel && urlPrefix !== 'ksm'" class="py-8 instance">
+      <div class="container is-fluid">
+        <LazyTopCollections class="my-5" />
+      </div>
+    </section>
+
+    <section v-if="showCarousel" class="py-8 instance">
+      <div class="container is-fluid">
+        <!-- new listings -->
+        <LazyCarouselTypeNewestList />
+
+        <!-- latest sales -->
+        <LazyCarouselTypeLatestSales class="mt-8" />
+      </div>
+    </section>
+  </div>
+</template>
+
+<script lang="ts" setup>
+const { urlPrefix } = usePrefix()
+
+// currently only supported
+const showCarousel = computed(() => {
+  return (
+    urlPrefix.value === 'rmrk' ||
+    urlPrefix.value === 'ksm' ||
+    urlPrefix.value === 'snek' ||
+    urlPrefix.value === 'bsx'
+  )
+})
+</script>

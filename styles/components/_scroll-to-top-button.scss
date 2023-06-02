@@ -1,0 +1,22 @@
+.scroll-top-button {
+  position: fixed !important;
+  right: 24px;
+  bottom: 100px;
+  width: 35px;
+  height: 35px !important;
+  z-index: 998;
+  border-radius: 0 !important;
+
+  @include ktheme() {
+    box-shadow: theme('primary-shadow');
+    border: 1px solid theme('border-color');
+    color: theme('text-color');
+    background: theme('background-color');
+    &:hover {
+      background: theme('k-accentHover');
+      .icon {
+        color: theme('black') !important;
+      }
+    }
+  }
+}

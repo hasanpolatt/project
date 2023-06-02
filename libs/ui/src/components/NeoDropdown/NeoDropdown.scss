@@ -1,0 +1,55 @@
+@import '@oruga-ui/oruga/src/scss/utilities/expressions.scss';
+@import '@oruga-ui/oruga/src/scss/utilities/variables.scss';
+@import '@oruga-ui/oruga/src/scss/utilities/animations.scss';
+@import '@oruga-ui/oruga/src/scss/utilities/helpers.scss';
+@import '../../scss/variable.scss';
+
+$dropdown-menu-padding: 0;
+$dropdown-menu-margin: 1rem 0;
+$dropdown-menu-border-radius: 0;
+
+$dropdown-menu-box-shadow: 4px 4px hsl(0deg, 0%, 4%);
+$dropdown-item-hover-color: #1f1f1f;
+$dropdown-item-hover-background-color: #ffe5f3;
+
+@import '@oruga-ui/oruga/src/scss/components/dropdown.scss';
+
+.o-drop__item {
+  @include ktheme() {
+    border-bottom: 1px solid theme('border-color');
+    color: theme('text-color');
+  }
+
+  &:hover {
+    @include ktheme() {
+      background: theme('k-accentHover');
+    }
+  }
+
+  &.is-active,
+  &--active {
+    @include ktheme() {
+      color: theme('text-color-inverse')!important;
+      background: theme('background-color-inverse')!important;
+    }
+  }
+}
+
+.o-drop__menu {
+  @include ktheme() {
+    box-shadow: theme('primary-shadow');
+    border: 1px solid theme('border-color');
+    color: theme('text-color');
+    background: theme('background-color');
+  }
+}
+
+.o-drop-active {
+  .is-neo,
+  .is-neo:hover {
+    @include ktheme() {
+      color: theme('text-color-inverse');
+      background: theme('background-color-inverse');
+    }
+  }
+}
